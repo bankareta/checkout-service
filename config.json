@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "base"
+  },
+  "web": {
+    "prefork": false,
+    "port": 8656
+  },
+  "log": {
+    "level": 6
+  },
+  "database": {
+    "username": "root",
+    "password": "",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "name": "base",
+    "pool": {
+      "idle": 10,
+      "max": 100,
+      "lifetime": 300
+    }
+  }
+}

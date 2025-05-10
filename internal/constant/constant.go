@@ -1,0 +1,11 @@
+package constant
+
+// Constant Bulk Insert Product
+const (
+	ConstantEmpty                        = "-"
+	PRODUCT_PROCESS_STATUS_PROCESSED     = "PROCESSED"
+	PRODUCT_PROCESS_STATUS_FAILED        = "FAILED"
+	PRODUCT_PROCESS_STATUS_DONE          = "DONE"
+	PRODUCT_PROCESS_DETAIL_STATUS_FAILED = "FAILED"
+	PRODUCT_PROCESS_DETAIL_STATUS_DONE   = "DONE"
+)
