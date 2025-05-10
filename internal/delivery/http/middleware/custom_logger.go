@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"base-golang/internal/helpers"
+	"checkout-service/internal/helpers"
 	"encoding/json"
 	"fmt"
 	"log"

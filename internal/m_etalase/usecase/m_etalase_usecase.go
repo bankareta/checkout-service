@@ -1,9 +1,9 @@
 package usecase
 
 import (
-	"base-golang/internal/helpers"
-	metalase "base-golang/internal/m_etalase"
-	"base-golang/internal/model"
+	"checkout-service/internal/helpers"
+	metalase "checkout-service/internal/m_etalase"
+	"checkout-service/internal/model"
 	"context"
 
 	"github.com/go-playground/validator/v10"

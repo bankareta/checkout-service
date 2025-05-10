@@ -1,7 +1,7 @@
 package config
 
 import (
-	"base-golang/internal/environtment"
+	"checkout-service/internal/environtment"
 	"fmt"
 	"time"
 

@@ -6,8 +6,8 @@ import (
 	"os"
 	"os/signal"
 
-	"base-golang/internal/config"
-	"base-golang/internal/environtment"
+	"checkout-service/internal/config"
+	"checkout-service/internal/environtment"
 
 	"sync"
 	"syscall"

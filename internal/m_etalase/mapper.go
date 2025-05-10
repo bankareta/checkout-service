@@ -1,8 +1,8 @@
 package metalase
 
 import (
-	"base-golang/internal/entity"
-	"base-golang/internal/model"
+	"checkout-service/internal/entity"
+	"checkout-service/internal/model"
 )
 
 type MEtalaseMapper interface {

@@ -1,7 +1,7 @@
 package model
 
 import (
-	"base-golang/internal/helpers"
+	"checkout-service/internal/helpers"
 	"time"
 
 	"github.com/gofiber/fiber/v2"

@@ -1,9 +1,9 @@
 package mapper
 
 import (
-	"base-golang/internal/entity"
-	metalase "base-golang/internal/m_etalase"
-	"base-golang/internal/model"
+	"checkout-service/internal/entity"
+	metalase "checkout-service/internal/m_etalase"
+	"checkout-service/internal/model"
 
 	"github.com/sirupsen/logrus"
 )

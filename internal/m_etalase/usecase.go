@@ -1,7 +1,7 @@
 package metalase
 
 import (
-	"base-golang/internal/model"
+	"checkout-service/internal/model"
 	"context"
 )
 

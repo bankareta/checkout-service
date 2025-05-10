@@ -1,8 +1,8 @@
 package main
 
 import (
-	"base-golang/internal/config"
-	"base-golang/internal/environtment"
+	"checkout-service/internal/config"
+	"checkout-service/internal/environtment"
 	"fmt"
 )
 

@@ -3,10 +3,10 @@ package repository
 import (
 	"context"
 
-	"base-golang/internal/entity"
-	"base-golang/internal/helpers"
-	metalase "base-golang/internal/m_etalase"
-	repoGlobal "base-golang/internal/repository"
+	"checkout-service/internal/entity"
+	"checkout-service/internal/helpers"
+	metalase "checkout-service/internal/m_etalase"
+	repoGlobal "checkout-service/internal/repository"
 
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"

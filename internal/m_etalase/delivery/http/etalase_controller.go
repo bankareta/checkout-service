@@ -1,8 +1,8 @@
 package http
 
 import (
-	metalase "base-golang/internal/m_etalase"
-	"base-golang/internal/model"
+	metalase "checkout-service/internal/m_etalase"
+	"checkout-service/internal/model"
 
 	"github.com/gofiber/fiber/v2"
 

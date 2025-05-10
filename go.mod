@@ -1,4 +1,4 @@
-module base-golang
+module checkout-service
 
 go 1.23
 

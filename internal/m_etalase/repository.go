@@ -1,7 +1,7 @@
 package metalase
 
 import (
-	"base-golang/internal/entity"
+	"checkout-service/internal/entity"
 )
 
 type MEtalaseRepository interface {

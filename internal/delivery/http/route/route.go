@@ -1,8 +1,8 @@
 package route
 
 import (
-	"base-golang/internal/delivery/http/middleware"
-	metalaseHttp "base-golang/internal/m_etalase/delivery/http"
+	"checkout-service/internal/delivery/http/middleware"
+	metalaseHttp "checkout-service/internal/m_etalase/delivery/http"
 
 	"github.com/gofiber/fiber/v2"
 )

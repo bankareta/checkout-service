@@ -1,9 +1,9 @@
 package config
 
 import (
-	"base-golang/internal/environtment"
-	"base-golang/internal/helpers"
-	"base-golang/internal/model"
+	"checkout-service/internal/environtment"
+	"checkout-service/internal/helpers"
+	"checkout-service/internal/model"
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"

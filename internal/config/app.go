@@ -1,13 +1,13 @@
 package config
 
 import (
-	"base-golang/internal/delivery/http/route"
-	"base-golang/internal/environtment"
+	"checkout-service/internal/delivery/http/route"
+	"checkout-service/internal/environtment"
 
-	httpEtalase "base-golang/internal/m_etalase/delivery/http"
-	mapperEtalase "base-golang/internal/m_etalase/mapper"
-	repositoryEtalase "base-golang/internal/m_etalase/repository"
-	usecaseEtalase "base-golang/internal/m_etalase/usecase"
+	httpEtalase "checkout-service/internal/m_etalase/delivery/http"
+	mapperEtalase "checkout-service/internal/m_etalase/mapper"
+	repositoryEtalase "checkout-service/internal/m_etalase/repository"
+	usecaseEtalase "checkout-service/internal/m_etalase/usecase"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
