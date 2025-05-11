@@ -39,14 +39,16 @@ CREATE TABLE IF NOT EXISTS discounts (
 );
 
 INSERT INTO discounts (type, is_percentage, amount, required_qty, final_qty, free_id_product, created_at, updated_at, deleted_at)
-SELECT * FROM (
-    SELECT 1, 0, 0, 1, 0, 4, '2025-05-09 20:03:41', '2025-05-09 20:03:41', NULL
-    UNION ALL
-    SELECT 2, 0, 0, 3, 2, 0, '2025-05-09 20:05:14', '2025-05-09 20:05:14', NULL
-    UNION ALL
-    SELECT 3, 1, 10, 3, 0, 0, '2025-05-09 20:07:04', '2025-05-09 20:07:04', NULL
-) AS tmp
-WHERE NOT EXISTS (SELECT 1 FROM discounts LIMIT 1);
+SELECT 1, 0, 0, 1, 0, 4, '2025-05-09 20:03:41', '2025-05-09 20:03:41', NULL
+WHERE NOT EXISTS (SELECT 1 FROM discounts WHERE type = 1 AND amount = 0);
+
+INSERT INTO discounts (type, is_percentage, amount, required_qty, final_qty, free_id_product, created_at, updated_at, deleted_at)
+SELECT 2, 0, 0, 3, 2, 0, '2025-05-09 20:05:14', '2025-05-09 20:05:14', NULL
+WHERE NOT EXISTS (SELECT 1 FROM discounts WHERE type = 2 AND amount = 0);
+
+INSERT INTO discounts (type, is_percentage, amount, required_qty, final_qty, free_id_product, created_at, updated_at, deleted_at)
+SELECT 3, 1, 10, 3, 0, 0, '2025-05-09 20:07:04', '2025-05-09 20:07:04', NULL
+WHERE NOT EXISTS (SELECT 1 FROM discounts WHERE type = 3 AND amount = 10);
 
 CREATE TABLE IF NOT EXISTS products_discounts (
   product_id INT NOT NULL,
