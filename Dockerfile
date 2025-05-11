@@ -1,4 +1,4 @@
-FROM golang:1.22
+FROM golang:1.23.4
 
 WORKDIR /app
 
@@ -6,14 +6,16 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
+RUN apt-get update && apt-get install -y netcat-openbsd
+
+RUN chmod +x /app/wait-for.sh
+
 RUN go mod tidy
 
 RUN go build -o main-web ./cmd/web/main.go
-# RUN go build -o main-worker ./cmd/worker/main.go  # Uncomment jika ada worker
 
 RUN mkdir -p ./storage/logs ./temp && chmod -R 777 ./storage/logs ./temp
 
-COPY temp temp
 COPY app.env app.env
 
-EXPOSE 3000
+EXPOSE 3001
