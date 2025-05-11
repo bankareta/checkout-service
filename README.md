@@ -24,7 +24,7 @@ This is golang clean architecture template.
 
 - Golang : https://github.com/golang/go
 - MySQL (Database) : https://github.com/mysql/mysql-server
-- Apache Kafka : https://github.com/apache/kafka
+- Docker : https://www.docker.com
 
 ## Framework & Library
 
@@ -34,31 +34,18 @@ This is golang clean architecture template.
 - Golang Migrate (Database Migration) : https://github.com/golang-migrate/migrate
 - Go Playground Validator (Validation) : https://github.com/go-playground/validator
 - Logrus (Logger) : https://github.com/sirupsen/logrus
-- Confluent Kafka Golang : https://github.com/confluentinc/confluent-kafka-go
 
 ## Configuration
 
 All configuration is in `config.json` file.
 
-## API Spec
+## API Postman
 
-All API Spec is in `api` folder.
+All API is in `api` folder. Import json to Postman Desktop.
 
-## Database Migration
+## Database SQL
 
-All database migration is in `db/migrations` folder.
-
-### Create Migration
-
-```shell
-migrate create -ext sql -dir db/migrations create_table_xxx
-```
-
-### Run Migration
-
-```shell
-migrate -database "mysql://root:@tcp(localhost:3306)/golang_clean_architecture?charset=utf8mb4&parseTime=True&loc=Local" -path db/migrations up
-```
+All table is in `migrations` folder the name `init.sql`.
 
 ## Run Application
 
@@ -68,14 +55,36 @@ migrate -database "mysql://root:@tcp(localhost:3306)/golang_clean_architecture?c
 go test -v ./test/
 ```
 
-### Run web server
+### Run web server using command line
+
+```bash
+go mod tidy
+```
 
 ```bash
 go run cmd/web/main.go
 ```
 
-### Run worker
+### Run web server using air (Mac)
 
 ```bash
-go run cmd/worker/main.go
+go install github.com/cosmtrek/air@latest
+```
+
+```bash
+export PATH=$PATH:$HOME/go/bin
+```
+
+```bash
+source ~/.zshrc
+```
+
+```bash
+air
+```
+
+### Run web server using docker
+
+```bash
+docker-compose up --build 
 ```

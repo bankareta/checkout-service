@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "a2c57133-ec3a-475a-867a-c6c3d7e95a90",
+		"name": "Checkout Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2576129"
+	},
+	"item": [
+		{
+			"name": "Master",
+			"item": [
+				{
+					"name": "1. Get List Products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/api/v1/master/inquiryProducts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"master",
+								"inquiryProducts"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://127.0.0.1:3001/api/v1/etalase/addEtalase' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"username\": \"081280017750\",\r\n    \"reference_id\": \"RF25c09883\",\r\n    \"etalase_name\": \"ETALASE YANG ADA STORE DAN THUMBNAIL\",\r\n    \"photo_etalase\": \"\",\r\n    \"id_products\": [200036,200035,200032,200031]\r\n}'"
+					},
+					"response": [
+						{
+							"name": "resp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3001/api/v1/master/inquiryProducts",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"master",
+										"inquiryProducts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 10 May 2025 14:57:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "494"
+								},
+								{
+									"key": "Request-Id",
+									"value": "24e35491-220f-417f-8e42-fdafe12c5b73"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"00\",\n    \"responseDesc\": \"Success Get Products\",\n    \"responseData\": [\n        {\n            \"id\": 4,\n            \"sku\": \"234234\",\n            \"product_name\": \"Raspberry Pi B\",\n            \"price\": 30,\n            \"price_formatted\": \"$30.00\",\n            \"qty\": 2\n        },\n        {\n            \"id\": 3,\n            \"sku\": \"A304SD\",\n            \"product_name\": \"Alexa Speaker\",\n            \"price\": 109.5,\n            \"price_formatted\": \"$109.50\",\n            \"qty\": 10\n        },\n        {\n            \"id\": 2,\n            \"sku\": \"43N23P\",\n            \"product_name\": \"MacBook Pro\",\n            \"price\": 5399.99,\n            \"price_formatted\": \"$5,399.99\",\n            \"qty\": 5\n        },\n        {\n            \"id\": 1,\n            \"sku\": \"120P90\",\n            \"product_name\": \"Google Home\",\n            \"price\": 49.99,\n            \"price_formatted\": \"$49.99\",\n            \"qty\": 10\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "1. Scan Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sku\" : \"234234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/api/v1/cashier/scanProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"cashier",
+								"scanProduct"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://127.0.0.1:3001/api/v1/etalase/addEtalase' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"username\": \"081280017750\",\r\n    \"reference_id\": \"RF25c09883\",\r\n    \"etalase_name\": \"ETALASE YANG ADA STORE DAN THUMBNAIL\",\r\n    \"photo_etalase\": \"\",\r\n    \"id_products\": [200036,200035,200032,200031]\r\n}'"
+					},
+					"response": [
+						{
+							"name": "Resp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sku\" : \"234234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3001/api/v1/cashier/scanProduct",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"cashier",
+										"scanProduct"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 10 May 2025 17:35:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								},
+								{
+									"key": "Request-Id",
+									"value": "89c4e9c2-416f-4ed2-ac84-9391e90a40a2"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"00\",\n    \"responseDesc\": \"Success Get Products\",\n    \"responseData\": {\n        \"id\": 4,\n        \"sku\": \"234234\",\n        \"product_name\": \"Raspberry Pi B\",\n        \"price\": 30,\n        \"price_formatted\": \"$30.00\",\n        \"qty\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "2. Checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\" : [\n        {\n            \"product_id\" : 2,\n            \"qty\" : 1\n        },\n        {\n            \"product_id\" : 4,\n            \"qty\" : 2\n        },\n        {\n            \"product_id\" : 1,\n            \"qty\" : 3\n        },\n        {\n            \"product_id\" : 3,\n            \"qty\" : 3\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/api/v1/cashier/checkout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"cashier",
+								"checkout"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://127.0.0.1:3001/api/v1/etalase/addEtalase' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"username\": \"081280017750\",\r\n    \"reference_id\": \"RF25c09883\",\r\n    \"etalase_name\": \"ETALASE YANG ADA STORE DAN THUMBNAIL\",\r\n    \"photo_etalase\": \"\",\r\n    \"id_products\": [200036,200035,200032,200031]\r\n}'"
+					},
+					"response": [
+						{
+							"name": "Resp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"items\" : [\n        {\n            \"product_id\" : 2,\n            \"qty\" : 1\n        },\n        {\n            \"product_id\" : 4,\n            \"qty\" : 2\n        },\n        {\n            \"product_id\" : 1,\n            \"qty\" : 3\n        },\n        {\n            \"product_id\" : 3,\n            \"qty\" : 3\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3001/api/v1/cashier/checkout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"cashier",
+										"checkout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 11 May 2025 07:30:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1393"
+								},
+								{
+									"key": "Request-Id",
+									"value": "7d1071c1-9762-47c7-9921-0eb08bc7449c"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"00\",\n    \"responseDesc\": \"Success Checkout\",\n    \"responseData\": {\n        \"id\": 1,\n        \"checkout_date\": \"2025-05-11T14:30:22.563+07:00\",\n        \"items\": [\n            {\n                \"products\": [\n                    {\n                        \"product_id\": 2,\n                        \"product_name\": \"MacBook Pro\",\n                        \"qty\": 1,\n                        \"price\": 5399.99,\n                        \"price_total\": 5399.99,\n                        \"price_formatted\": \"$5,399.99\",\n                        \"total_formatted\": \"$5,399.99\"\n                    },\n                    {\n                        \"product_id\": 4,\n                        \"product_name\": \"Raspberry Pi B\",\n                        \"qty\": 1,\n                        \"price\": 0,\n                        \"price_total\": 0,\n                        \"price_formatted\": \"$0.00\",\n                        \"total_formatted\": \"$0.00\"\n                    }\n                ],\n                \"price_total\": 5399.99,\n                \"total_formatted\": \"$5,399.99\",\n                \"discount_description\": [\n                    \"Each sale of a MacBook Pro comes with a free Raspberry Pi B\"\n                ]\n            },\n            {\n                \"products\": [\n                    {\n                        \"product_id\": 4,\n                        \"product_name\": \"Raspberry Pi B\",\n                        \"qty\": 1,\n                        \"price\": 30,\n                        \"price_total\": 30,\n                        \"price_formatted\": \"$30.00\",\n                        \"total_formatted\": \"$30.00\"\n                    }\n                ],\n                \"price_total\": 30,\n                \"total_formatted\": \"$30.00\",\n                \"discount_description\": []\n            },\n            {\n                \"products\": [\n                    {\n                        \"product_id\": 1,\n                        \"product_name\": \"Google Home\",\n                        \"qty\": 3,\n                        \"price\": 49.99,\n                        \"price_total\": 99.98,\n                        \"price_formatted\": \"$49.99\",\n                        \"total_formatted\": \"$99.98\"\n                    }\n                ],\n                \"price_total\": 99.98,\n                \"total_formatted\": \"$99.98\",\n                \"discount_description\": [\n                    \"Buy 3 Google Home for the price of 2\"\n                ]\n            },\n            {\n                \"products\": [\n                    {\n                        \"product_id\": 3,\n                        \"product_name\": \"Alexa Speaker\",\n                        \"qty\": 3,\n                        \"price\": 109.5,\n                        \"price_total\": 295.65,\n                        \"price_formatted\": \"$109.50\",\n                        \"total_formatted\": \"$295.65\"\n                    }\n                ],\n                \"price_total\": 295.65,\n                \"total_formatted\": \"$295.65\",\n                \"discount_description\": [\n                    \"Buy 3 Alexa Speaker, get 10% off\"\n                ]\n            }\n        ],\n        \"price_total\": 5825.62,\n        \"total_formatted\": \"$5,825.62\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
