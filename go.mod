@@ -7,7 +7,7 @@ toolchain go1.23.4
 require (
 	github.com/confluentinc/confluent-kafka-go/v2 v2.3.0
 	github.com/go-playground/validator/v10 v10.26.0
-	github.com/go-sql-driver/mysql v1.7.0
+	github.com/gofiber/fiber v1.14.6
 	github.com/gofiber/fiber/v2 v2.49.2
 	github.com/google/uuid v1.6.0
 	github.com/json-iterator/go v1.1.12
@@ -29,6 +29,9 @@ require (
 	github.com/gabriel-vasile/mimetype v1.4.8 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
+	github.com/go-sql-driver/mysql v1.7.0 // indirect
+	github.com/gofiber/utils v0.0.10 // indirect
+	github.com/gorilla/schema v1.1.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect

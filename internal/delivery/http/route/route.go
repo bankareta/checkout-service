@@ -2,14 +2,16 @@ package route
 
 import (
 	"checkout-service/internal/delivery/http/middleware"
-	metalaseHttp "checkout-service/internal/m_etalase/delivery/http"
+	masterProductsHttp "checkout-service/internal/master_products/delivery/http"
+	transactionHttp "checkout-service/internal/tr_transaction/delivery/http"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 type RouteConfig struct {
-	App               *fiber.App
-	EtalaseController *metalaseHttp.MEtalaseController
+	App                      *fiber.App
+	MasterProductsController *masterProductsHttp.MasterProductsController
+	TransactionController    *transactionHttp.TransactionController
 }
 
 func (c *RouteConfig) Setup() {
@@ -19,6 +21,10 @@ func (c *RouteConfig) Setup() {
 }
 
 func (c *RouteConfig) SetupGuestRoute() {
-	etalase := c.App.Group("/api/v1/etalase")
-	etalase.Post("/addEtalase", c.EtalaseController.AddEtalase)
+	master := c.App.Group("/api/v1/master")
+	master.Post("/inquiryProducts", c.MasterProductsController.InquiryProducts)
+
+	trans := c.App.Group("/api/v1/cashier")
+	trans.Post("/scanProduct", c.TransactionController.ScanProduct)
+	trans.Post("/checkout", c.TransactionController.Checkout)
 }

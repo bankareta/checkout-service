@@ -4,10 +4,17 @@ import (
 	"checkout-service/internal/delivery/http/route"
 	"checkout-service/internal/environtment"
 
-	httpEtalase "checkout-service/internal/m_etalase/delivery/http"
-	mapperEtalase "checkout-service/internal/m_etalase/mapper"
-	repositoryEtalase "checkout-service/internal/m_etalase/repository"
-	usecaseEtalase "checkout-service/internal/m_etalase/usecase"
+	httpMasterProducts "checkout-service/internal/master_products/delivery/http"
+	mapperMasterProducts "checkout-service/internal/master_products/mapper"
+	repositoryMasterProducts "checkout-service/internal/master_products/repository"
+	usecaseMasterProducts "checkout-service/internal/master_products/usecase"
+
+	repositoryMasterDiscount "checkout-service/internal/master_discount/repository"
+
+	httpTransaction "checkout-service/internal/tr_transaction/delivery/http"
+	mapperTransaction "checkout-service/internal/tr_transaction/mapper"
+	repositoryTransaction "checkout-service/internal/tr_transaction/repository"
+	usecaseTransaction "checkout-service/internal/tr_transaction/usecase"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
@@ -25,20 +32,26 @@ type BootstrapConfig struct {
 
 func Bootstrap(config *BootstrapConfig) {
 	// setup repositories
-	metalaseRepository := repositoryEtalase.NewMEtalaseRepository(config.DB, config.Log)
+	masterProductsRepository := repositoryMasterProducts.NewMasterProductsRepository(config.DB, config.Log)
+	masterDiscountRepository := repositoryMasterDiscount.NewMasterDiscountRepository(config.DB, config.Log)
+	transactionRepository := repositoryTransaction.NewTransactionRepository(config.DB, config.Log)
 
 	// setup mapper
-	etalaseMapper := mapperEtalase.NewMEtalaseMapper(config.Log)
+	masterProductsMapper := mapperMasterProducts.NewMasterProductsMapper(config.Log)
+	transactionMapper := mapperTransaction.NewTransactionMapper(config.Log)
 
 	// setup use cases
-	etalaseUseCase := usecaseEtalase.NewMEtalaseUseCase(config.DB, config.Log, config.Validate, metalaseRepository, etalaseMapper)
+	masterProductsUseCase := usecaseMasterProducts.NewMasterProductsUseCase(config.DB, config.Log, config.Validate, masterProductsRepository, masterProductsMapper)
+	transactionUseCase := usecaseTransaction.NewTransactionUseCase(config.DB, config.Log, config.Validate, transactionRepository, masterProductsRepository, masterDiscountRepository, transactionMapper)
 
 	// setup controller
-	etalaseController := httpEtalase.NewMEtalaseController(etalaseUseCase, config.Log)
+	masterProductsController := httpMasterProducts.NewMasterProductsController(masterProductsUseCase, config.Log)
+	transactionController := httpTransaction.NewTransactionController(transactionUseCase, config.Log)
 
 	routeConfig := route.RouteConfig{
-		App:               config.App,
-		EtalaseController: etalaseController,
+		App:                      config.App,
+		MasterProductsController: masterProductsController,
+		TransactionController:    transactionController,
 	}
 	routeConfig.Setup()
 }
