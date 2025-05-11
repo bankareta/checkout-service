@@ -1,6 +1,17 @@
 version: '3.8'
 
 services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: "rootpassword"
+      MYSQL_DATABASE: base
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./migrations/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3307:3306"
+
   app:
     build:
       context: .
@@ -8,4 +19,15 @@ services:
       - "3001:3001"
     volumes:
       - .:/app
-    command: go run cmd/web/main.go
+    command: ["./wait-for.sh", "db", "go", "run", "cmd/web/main.go"]
+    depends_on:
+      - db
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=3306
+      - DATABASE_USERNAME=root
+      - DATABASE_PASSWORD=
+      - DATABASE_NAME=base
+
+volumes:
+  db-data:

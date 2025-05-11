@@ -85,6 +85,8 @@ air
 
 ### Run web server using docker
 
+Change branch to `feature/docker-setup` before starting.
+
 ```bash
 docker-compose up --build 
 ```
